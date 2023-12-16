@@ -27,4 +27,9 @@ poly_reg = PolynomialFeatures(degree=4, interaction_only=True)
 X_poly_train = poly_reg.fit_transform(X_train)
 X_poly_test = poly_reg.transform(X_test)  # Transform the test set
 
+lin_reg = LinearRegression()
+lin_reg.fit(X_poly_train, y_train)
+
+y_pred = lin_reg.predict(X_poly_test)
+
 
