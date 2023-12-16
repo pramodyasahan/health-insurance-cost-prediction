@@ -35,4 +35,14 @@ y_pred = lin_reg.predict(X_poly_test)
 np.set_printoptions(precision=2)
 print(np.concatenate((y_pred.reshape(len(y_pred), 1), y_test.reshape(len(y_test), 1)), 1))
 
+index = range(len(y_pred))
 
+plt.plot(index, y_pred, color='red', label='Predicted Grades')
+plt.plot(index, y_test, color='blue', label='Actual Grades')
+
+plt.title('Comparison of Predicted and Actual Grades')
+plt.xlabel('Index of Samples')
+plt.ylabel('Grades')
+plt.legend()
+
+plt.show()
