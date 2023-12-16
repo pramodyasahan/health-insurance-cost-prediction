@@ -19,3 +19,7 @@ X = sc_X.fit_transform(X)
 y = sc_y.fit_transform(y)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
+
+regressor = SVR(kernel='rbf')
+regressor.fit(X_train, y_train)
+
